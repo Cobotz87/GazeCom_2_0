@@ -17,7 +17,8 @@ namespace GazeCom_2_0.Panels.Basic
             _mainPanels = new List<UserControl>
             {
                 new YesNoPanel(),
-                new BasicQuestions1()
+                new BasicQuestions1(),
+                new BasicSelfExpression()
             };
 
             _currIndex = 0;

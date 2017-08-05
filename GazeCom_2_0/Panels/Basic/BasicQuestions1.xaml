@@ -20,6 +20,5 @@
             <Button x:Name="BtnHowIsEveryone" Grid.Row="1" Content="How's everyone?" FontSize="80" tobii:Behaviors.Activated="BtnHowIsEveryone_OnActivated"  Style="{DynamicResource GazeActivatableButton1}"/>
         </Grid>
 
-
     </Grid>
 </UserControl>
