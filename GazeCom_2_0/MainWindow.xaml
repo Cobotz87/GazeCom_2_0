@@ -1,0 +1,39 @@
+﻿<Window x:Class="GazeCom_2_0.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:tobii="clr-namespace:Tobii.Interaction.Wpf;assembly=Tobii.Interaction.Net"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GazeCom_2_0"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="1080" Width="1920">
+    
+    <Grid x:Name="LayoutRoot" tobii:Behaviors.IsGazeAware="True">
+        <Grid.Style>
+            <Style TargetType="Grid">
+                <Setter Property="Background" Value="White" />
+
+                <Style.Triggers>
+                    <Trigger Property="tobii:Behaviors.HasGaze" Value="True">
+                        <Setter Property="Background" Value="Magenta" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Style>
+
+        <Grid.Resources>
+            <GridLength x:Key="mRowGap">10</GridLength>
+        </Grid.Resources>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="{StaticResource mRowGap}"/>
+            <RowDefinition/>
+            <RowDefinition Height="{StaticResource mRowGap}"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        
+    </Grid>
+</Window>
