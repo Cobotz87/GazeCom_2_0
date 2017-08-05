@@ -32,7 +32,7 @@ namespace GazeCom_2_0
 
             //FixationHelper
             var fixationActivator = new FixationActivator(ref tobiiHost);
-            fixationActivator.DurationToActivate = 500;
+            fixationActivator.DurationToActivate = AppResources.GetFixation2ActivateTime();
             fixationActivator.OnActivate += OnFixationActivation;
 
             //Tobii, Gaze Data Stream

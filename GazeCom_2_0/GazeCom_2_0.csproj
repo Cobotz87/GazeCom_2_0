@@ -87,6 +87,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="TobiiActivator\FixationActivator.cs" />
+    <Compile Include="Utilities\AppResources.cs" />
     <Compile Include="Utilities\TextToSpeech.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -15,18 +15,6 @@
         <GridLength x:Key="MLeftColumnSize">0</GridLength>
         <GridLength x:Key="MRightColumnSize">200</GridLength>
         
-        <!-- Style, Button -->
-        <Style x:Key="GazeActivatableButton1" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="tobii:Behaviors.IsGazeAware" Value="True"/>
-            <Setter Property="tobii:Behaviors.IsActivatable" Value="True"/>
-            <Style.Triggers>
-                <Trigger Property="tobii:Behaviors.HasGaze" Value="True">
-                    <Setter Property="Background" Value="Orange" />
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-        
     </Window.Resources>
 
     <!-- TODO, Put on place holder -->
@@ -48,9 +36,9 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <Button x:Name="BtnYes" Grid.Row="0" Content="Yes" FontSize="160" tobii:Behaviors.Activated="BtnYes_OnActivated" Style="{StaticResource GazeActivatableButton1}"/>
-            <Button x:Name="BtnNo" Grid.Row="2" Content="No" FontSize="160" tobii:Behaviors.Activated="BtnNo_OnActivated"  Style="{StaticResource GazeActivatableButton1}"/>
-            <Button x:Name="BtnMaybe" Grid.Row="4" Content="Maybe" FontSize="160" tobii:Behaviors.Activated="BtnMaybe_OnActivated"  Style="{StaticResource GazeActivatableButton1}"/>
+            <Button x:Name="BtnYes" Grid.Row="0" Content="Yes" FontSize="160" tobii:Behaviors.Activated="BtnYes_OnActivated" Style="{DynamicResource GazeActivatableButton1}"/>
+            <Button x:Name="BtnNo" Grid.Row="2" Content="No" FontSize="160" tobii:Behaviors.Activated="BtnNo_OnActivated"  Style="{DynamicResource GazeActivatableButton1}"/>
+            <Button x:Name="BtnMaybe" Grid.Row="4" Content="Maybe" FontSize="160" tobii:Behaviors.Activated="BtnMaybe_OnActivated"  Style="{DynamicResource GazeActivatableButton1}"/>
         </Grid>
         
     </Grid>
