@@ -12,9 +12,8 @@
     <Window.Resources>
 
         <!-- Values -->
-        <GridLength x:Key="MRowGap">0</GridLength>
-        <GridLength x:Key="MLeftColumnSize">200</GridLength>
-        <GridLength x:Key="MRightColumnSize">200</GridLength>
+        <GridLength x:Key="MLeftColumnSize">0</GridLength>
+        <GridLength x:Key="MRightColumnSize">250</GridLength>
 
     </Window.Resources>
 
@@ -27,10 +26,9 @@
             <ColumnDefinition Width="{StaticResource MRightColumnSize}"/>
         </Grid.ColumnDefinitions>
 
-        <!-- TODO, Put on place holder -->
         <!-- Left Panel -->
         <Grid x:Name="LeftLayoutRoot" Grid.Column="0">
-            <Button x:Name="BtnPrevious" Content="&lt;" FontSize="160" tobii:Behaviors.Activated="BtnPrevious_OnActivated" Style="{DynamicResource GazeActivatableButton1}"/>
+            <ContentControl x:Name="LeftPanel"/>
         </Grid>
 
         <!-- Mid Panel -->
@@ -40,7 +38,13 @@
 
         <!-- Right Panel -->
         <Grid x:Name="RightLayoutRoot" Grid.Column="2">
-            <Button x:Name="BtnNext" Content="&gt;" FontSize="160" tobii:Behaviors.Activated="BtnNext_OnActivated"  Style="{DynamicResource GazeActivatableButton1}"/>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Button x:Name="BtnNext" Content="&gt;" Grid.Row="0" FontSize="160" tobii:Behaviors.Activated="BtnNext_OnActivated"  Style="{DynamicResource GazeActivatableButton1}"/>
+            <Button x:Name="BtnPrevious" Content="&lt;" Grid.Row="1" FontSize="160" tobii:Behaviors.Activated="BtnPrevious_OnActivated" Style="{DynamicResource GazeActivatableButton1}"/>
         </Grid>
 
     </Grid>
