@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="GazeCom_2_0.Panels.Basic.BasicSelfExpression"
+﻿<UserControl x:Class="GazeCom_2_0.Panels.Basic.BasicSelfExpression2"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -16,9 +16,9 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <Button x:Name="BtnHungry" Grid.Row="0" Content="I'm Hungry" FontSize="80" wpf:Behaviors.Activated="BtnHungry_OnActivated"  Style="{DynamicResource GazeActivatableButton1}"/>
-            <Button x:Name="BtnBored" Grid.Row="1" Content="I'm Thirsty" FontSize="80" wpf:Behaviors.Activated="BtnBored_OnActivated"  Style="{DynamicResource GazeActivatableButton1}"/>
-            <Button x:Name="BtnTired" Grid.Row="2" Content="I'm Tired" FontSize="80" wpf:Behaviors.Activated="BtnTired_OnActivated"  Style="{DynamicResource GazeActivatableButton1}"/>
+            <Button x:Name="Btn1" Grid.Row="0" Content="That is Good" FontSize="80" wpf:Behaviors.Activated="Btn1_OnActivated"  Style="{DynamicResource GazeActivatableButton1}"/>
+            <Button x:Name="Btn2" Grid.Row="1" Content="That is Bad" FontSize="80" wpf:Behaviors.Activated="Btn2_OnActivated"  Style="{DynamicResource GazeActivatableButton1}"/>
+            <Button x:Name="Btn3" Grid.Row="2" Content="That is Weird" FontSize="80" wpf:Behaviors.Activated="Btn3_OnActivated"  Style="{DynamicResource GazeActivatableButton1}"/>
         </Grid>
 
     </Grid>

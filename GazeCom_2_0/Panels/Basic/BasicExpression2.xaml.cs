@@ -20,26 +20,26 @@ namespace GazeCom_2_0.Panels.Basic
     /// <summary>
     /// Interaction logic for BasicSelfExpression.xaml
     /// </summary>
-    public partial class BasicSelfExpression : UserControl
+    public partial class BasicSelfExpression2 : UserControl
     {
-        public BasicSelfExpression()
+        public BasicSelfExpression2()
         {
             InitializeComponent();
         }
 
-        private void BtnHungry_OnActivated(object sender, ActivationRoutedEventArgs e)
+        private void Btn1_OnActivated(object sender, ActivationRoutedEventArgs e)
         {
-            TextToSpeech.Speak("I'm Hungry");
+            TextToSpeech.Speak("That is good!");
         }
 
-        private void BtnBored_OnActivated(object sender, ActivationRoutedEventArgs e)
+        private void Btn2_OnActivated(object sender, ActivationRoutedEventArgs e)
         {
-            TextToSpeech.Speak("I'm Thirsty");
+            TextToSpeech.Speak("That is bad!");
         }
 
-        private void BtnTired_OnActivated(object sender, ActivationRoutedEventArgs e)
+        private void Btn3_OnActivated(object sender, ActivationRoutedEventArgs e)
         {
-            TextToSpeech.Speak("I'm Tired");
+            TextToSpeech.Speak("That is Weird!");
         }
     }
 }
