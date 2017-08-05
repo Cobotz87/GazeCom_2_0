@@ -59,7 +59,9 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Speech" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -86,6 +88,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Panels\BasicQuestions1.xaml.cs">
+      <DependentUpon>BasicQuestions1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\YesNoPanel.xaml.cs">
+      <DependentUpon>YesNoPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TobiiActivator\FixationActivator.cs" />
     <Compile Include="Utilities\AppResources.cs" />
     <Compile Include="Utilities\TextToSpeech.cs" />
@@ -101,6 +109,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Panels\BasicQuestions1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Panels\YesNoPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

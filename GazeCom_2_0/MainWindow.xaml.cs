@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using GazeCom_2_0.Panels;
 using GazeCom_2_0.TobiiActivator;
 using GazeCom_2_0.Utilities;
 using Tobii.Interaction;
@@ -39,17 +40,10 @@ namespace GazeCom_2_0
             fixationActivator.DurationToActivate = AppResources.GetFixation2ActivateTime();
             fixationActivator.OnActivate += OnFixationActivation;
 
-            //Tobii, Gaze Data Stream
-            var gazePointDataStream = _tobiiHost.Streams.CreateGazePointDataStream();
-            gazePointDataStream.GazePoint(OnGazePointDataStream);
-
             InitializeComponent();
-        }
 
-        //Tobii Gaze, Stream
-        private static void OnGazePointDataStream(double x, double y, double timeStamp)
-        {
-            
+            //Add content into the main layout
+            MainPanel.Content = new YesNoPanel();
         }
 
         //Tobii, Fixation
@@ -58,22 +52,6 @@ namespace GazeCom_2_0
             tobiiHost.Commands.Input.SendActivation();
         }
         
-        //Activation Events
-        private void BtnYes_OnActivated(object sender, ActivationRoutedEventArgs e)
-        {
-            TextToSpeech.Speak("Yes!");
-        }
-
-        private void BtnNo_OnActivated(object sender, ActivationRoutedEventArgs e)
-        {
-            TextToSpeech.Speak("No!");
-        }
-
-        private void BtnMaybe_OnActivated(object sender, ActivationRoutedEventArgs e)
-        {
-            TextToSpeech.Speak("Maybe!");
-        }
-
         private void BtnCalibrate_OnActivated(object sender, ActivationRoutedEventArgs e)
         {
             //TODO: how to relaunch calibration?
@@ -84,6 +62,12 @@ namespace GazeCom_2_0
             {
                 calibrate.WaitForExit();
             }
+        }
+
+        private void BtnNext_OnActivated(object sender, ActivationRoutedEventArgs e)
+        {
+            //TODO make a list of main panel controls
+            MainPanel.Content = new BasicQuestions1();
         }
     }
 }

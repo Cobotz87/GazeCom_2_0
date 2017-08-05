@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="GazeCom_2_0.Panels.BasicQuestions1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:tobii="clr-namespace:Tobii.Interaction.Wpf;assembly=Tobii.Interaction.Net"
+             xmlns:local="clr-namespace:GazeCom_2_0.Panels"
+             mc:Ignorable="d" 
+             Background="White">
+    <Grid>
+
+        <Grid x:Name="MainLayoutRoot">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Button x:Name="BtnHowAreYou" Grid.Row="0" Content="How Are You?" FontSize="80" tobii:Behaviors.Activated="BtnHowAreYou_OnActivated"  Style="{DynamicResource GazeActivatableButton1}"/>
+            
+            <Button x:Name="BtnHowIsEveryone" Grid.Row="1" Content="How's everyone?" FontSize="80" tobii:Behaviors.Activated="BtnHowIsEveryone_OnActivated"  Style="{DynamicResource GazeActivatableButton1}"/>
+        </Grid>
+
+
+    </Grid>
+</UserControl>
