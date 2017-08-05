@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using GazeCom_2_0.Panels;
+using GazeCom_2_0.Panels.Basic;
 using GazeCom_2_0.TobiiActivator;
 using GazeCom_2_0.Utilities;
 using Tobii.Interaction;

@@ -17,35 +17,28 @@ using GazeCom_2_0.Utilities;
 using Tobii.Interaction;
 using Tobii.Interaction.Wpf;
 
-namespace GazeCom_2_0.Panels
+namespace GazeCom_2_0.Panels.Basic
 {
     /// <summary>
-    /// Interaction logic for YesNoPanel.xaml
+    /// Interaction logic for BasicQuestions1.xaml
     /// </summary>
-    public partial class YesNoPanel : UserControl
+    public partial class BasicQuestions1 : UserControl
     {
-        public YesNoPanel()
+        public BasicQuestions1()
         {
-            //Tobii
             var appInstance = Application.Current as App;
 
             InitializeComponent();
         }
 
-        //Activation Events
-        private void BtnYes_OnActivated(object sender, ActivationRoutedEventArgs e)
+        private void BtnHowAreYou_OnActivated(object sender, ActivationRoutedEventArgs e)
         {
-            TextToSpeech.Speak("Yes!");
+            TextToSpeech.Speak("How are you?");
         }
 
-        private void BtnNo_OnActivated(object sender, ActivationRoutedEventArgs e)
+        private void BtnHowIsEveryone_OnActivated(object sender, ActivationRoutedEventArgs e)
         {
-            TextToSpeech.Speak("No!");
-        }
-
-        private void BtnMaybe_OnActivated(object sender, ActivationRoutedEventArgs e)
-        {
-            TextToSpeech.Speak("Maybe!");
+            TextToSpeech.Speak("How is everyone?");
         }
     }
 }

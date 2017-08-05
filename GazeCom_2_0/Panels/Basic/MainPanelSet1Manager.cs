@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 
-namespace GazeCom_2_0.Panels
+namespace GazeCom_2_0.Panels.Basic
 {
     public class MainPanelSet1Manager
     {
