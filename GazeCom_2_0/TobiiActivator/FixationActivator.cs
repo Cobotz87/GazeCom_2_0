@@ -19,7 +19,10 @@ namespace GazeCom_2_0.TobiiActivator
         //Tobii, fixation
         private bool _fixationStart;
         private double _fixationBeginTimeStamp;
-        private readonly double _fixationActivationDuration;
+
+        //Property
+        //Time to stare to invoke OnActivate, in Miliseconds
+        public double DurationToActivate { get; set; }
 
         public FixationActivator(ref Host tobiiHost)
         {
@@ -27,7 +30,7 @@ namespace GazeCom_2_0.TobiiActivator
 
             _fixationStart = false;
             _fixationBeginTimeStamp = 0;
-            _fixationActivationDuration = 500; //miliseconds
+            DurationToActivate = 500; //miliseconds
 
             var fixationDataStream = tobiiHost.Streams.CreateFixationDataStream();
             fixationDataStream.Begin(OnFixationDataStreamBegin);
@@ -45,7 +48,7 @@ namespace GazeCom_2_0.TobiiActivator
         //Tobii Fixation, Data
         private bool IsFixationActivated(double timeStamp)
         {
-            return timeStamp - _fixationBeginTimeStamp > _fixationActivationDuration;
+            return timeStamp - _fixationBeginTimeStamp > DurationToActivate;
         }
 
         private void OnFixationDataStreamData(double x, double y, double timeStamp)
