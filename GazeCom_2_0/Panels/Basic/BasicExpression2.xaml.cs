@@ -39,7 +39,7 @@ namespace GazeCom_2_0.Panels.Basic
 
         private void Btn3_OnActivated(object sender, ActivationRoutedEventArgs e)
         {
-            TextToSpeech.Speak("That is Weird!");
+            TextToSpeech.Speak("I\'ve no Idea!");
         }
     }
 }
