@@ -16,12 +16,12 @@ namespace GazeCom_2_0
     public partial class App : Application
     {
         public Host TobiiHost { get; private set; }
-        private WpfInteractorAgent _wpfInteractorAgent;
+        public WpfInteractorAgent WpfInteractorAgent { get; private set; }
 
         protected override void OnStartup(StartupEventArgs e)
         {
             TobiiHost = new Host();
-            _wpfInteractorAgent = TobiiHost.InitializeWpfAgent();
+            WpfInteractorAgent = TobiiHost.InitializeWpfAgent();
         }
 
         protected override void OnExit(ExitEventArgs e)

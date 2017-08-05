@@ -9,12 +9,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="1080" Width="1920">
     <Window.Resources>
-        
+
         <!-- Values -->
-        <GridLength x:Key="MRowGap">1</GridLength>
-        <GridLength x:Key="MLeftColumnSize">0</GridLength>
+        <GridLength x:Key="MRowGap">0</GridLength>
+        <GridLength x:Key="MLeftColumnSize">200</GridLength>
         <GridLength x:Key="MRightColumnSize">200</GridLength>
-        
+
     </Window.Resources>
 
     <!-- TODO, Put on place holder -->
@@ -26,7 +26,16 @@
             <ColumnDefinition Width="{StaticResource MRightColumnSize}"/>
         </Grid.ColumnDefinitions>
 
-        <!-- Right Panel -->
+        <!-- TODO, Put on place holder -->
+        <!-- Left Panel -->
+        <Grid x:Name="LeftLayoutRoot" Grid.Column="0">
+
+            <Button x:Name="BtnCalibrate" Content="C" FontSize="160" tobii:Behaviors.Activated="BtnCalibrate_OnActivated" Style="{DynamicResource GazeActivatableButton1}"/>
+
+        </Grid>
+
+            <!-- TODO, Put on place holder -->
+        <!-- Mid Panel -->
         <Grid x:Name="MainLayoutRoot" Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition/>
