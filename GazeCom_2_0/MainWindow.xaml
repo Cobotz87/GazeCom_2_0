@@ -13,7 +13,7 @@
         <!-- Values -->
         <GridLength x:Key="MRowGap">1</GridLength>
         <GridLength x:Key="MLeftColumnSize">0</GridLength>
-        <GridLength x:Key="MRightColumnSize">400</GridLength>
+        <GridLength x:Key="MRightColumnSize">200</GridLength>
         
         <!-- Style, Button -->
         <Style x:Key="GazeActivatableButton1" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
@@ -29,6 +29,7 @@
         
     </Window.Resources>
 
+    <!-- TODO, Put on place holder -->
     <Grid x:Name="LayoutRoot" tobii:Behaviors.IsGazeAware="True">
         <!-- Grid Definitions -->
         <Grid.ColumnDefinitions>

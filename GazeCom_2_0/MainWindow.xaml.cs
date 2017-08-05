@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using GazeCom_2_0.TobiiActivator;
+using GazeCom_2_0.Utilities;
 using Tobii.Interaction;
 using Tobii.Interaction.Wpf;
 
@@ -31,6 +32,7 @@ namespace GazeCom_2_0
 
             //FixationHelper
             var fixationActivator = new FixationActivator(ref tobiiHost);
+            fixationActivator.DurationToActivate = 500;
             fixationActivator.OnActivate += OnFixationActivation;
 
             //Tobii, Gaze Data Stream
@@ -55,17 +57,17 @@ namespace GazeCom_2_0
         //Activation Events
         private void BtnYes_OnActivated(object sender, ActivationRoutedEventArgs e)
         {
-            MessageBox.Show("BtnYes_OnActivated is indeed activated!!");
+            TextToSpeech.Speak("Yes!");
         }
 
         private void BtnNo_OnActivated(object sender, ActivationRoutedEventArgs e)
         {
-            MessageBox.Show("BtnNo_OnActivated is indeed activated!!");
+            TextToSpeech.Speak("No!");
         }
 
         private void BtnMaybe_OnActivated(object sender, ActivationRoutedEventArgs e)
         {
-            MessageBox.Show("BtnMaybe_OnActivated is indeed activated!!");
+            TextToSpeech.Speak("Maybe!");
         }
     }
 }
