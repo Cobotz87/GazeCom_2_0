@@ -27,8 +27,12 @@ namespace GazeCom_2_0
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly MainPanelSet1Manager _mainPanelSet1Manager;
+
         public MainWindow()
         {
+            _mainPanelSet1Manager = new MainPanelSet1Manager();
+
             //Tobii
             var appInstance = Application.Current as App;
             var tobiiHost = appInstance?.TobiiHost;
@@ -40,25 +44,39 @@ namespace GazeCom_2_0
             InitializeComponent();
 
             //Add content into the main layout
-            MainPanel.Content = new YesNoPanel();
+            if(_mainPanelSet1Manager.HasPanel())
+                MainPanel.Content = _mainPanelSet1Manager.GetCurrentPanel();
         }
 
-        private void BtnCalibrate_OnActivated(object sender, ActivationRoutedEventArgs e)
+        private void BtnPrevious_OnActivated(object sender, ActivationRoutedEventArgs e)
         {
-            //TODO: how to relaunch calibration?
-            //var currProfileName = _tobiiHost.States.GetUserProfileNameAsync();
+            if (!_mainPanelSet1Manager.HasPanel())
+                return;
 
-            const string configurationPath = @"C:\Program Files (x86)\Tobii\Tobii EyeX Interaction\Tobii.EyeX.Interaction.TestEyeTracking.exe";
-            using (Process calibrate = Process.Start(configurationPath))
-            {
-                calibrate.WaitForExit();
-            }
+            MainPanel.Content = _mainPanelSet1Manager.GetPreviousPanel(true);
         }
 
         private void BtnNext_OnActivated(object sender, ActivationRoutedEventArgs e)
         {
-            //TODO make a list of main panel controls
-            MainPanel.Content = new BasicQuestions1();
+            if (!_mainPanelSet1Manager.HasPanel())
+                return;
+
+            MainPanel.Content = _mainPanelSet1Manager.GetNextPanel(true);
+        }
+
+        private void MainWindow_OnKeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.C)
+            {
+                //TODO, how to relaunch calibration in new Tobii SDK?
+                //var currProfileName = _tobiiHost.States.GetUserProfileNameAsync();
+
+                const string configurationPath = @"C:\Program Files (x86)\Tobii\Tobii EyeX Interaction\Tobii.EyeX.Interaction.TestEyeTracking.exe";
+                using (Process calibrate = Process.Start(configurationPath))
+                {
+                    calibrate.WaitForExit();
+                }
+            }
         }
     }
 }

@@ -91,6 +91,7 @@
     <Compile Include="Panels\BasicQuestions1.xaml.cs">
       <DependentUpon>BasicQuestions1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Panels\MainPanelSet1Manager.cs" />
     <Compile Include="Panels\YesNoPanel.xaml.cs">
       <DependentUpon>YesNoPanel.xaml</DependentUpon>
     </Compile>

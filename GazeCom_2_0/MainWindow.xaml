@@ -7,6 +7,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GazeCom_2_0"
         mc:Ignorable="d"
+        KeyUp="MainWindow_OnKeyUp"
         Title="MainWindow" Height="1080" Width="1920">
     <Window.Resources>
 
@@ -29,7 +30,7 @@
         <!-- TODO, Put on place holder -->
         <!-- Left Panel -->
         <Grid x:Name="LeftLayoutRoot" Grid.Column="0">
-            <Button x:Name="BtnCalibrate" Content="C" FontSize="160" tobii:Behaviors.Activated="BtnCalibrate_OnActivated" Style="{DynamicResource GazeActivatableButton1}"/>
+            <Button x:Name="BtnPrevious" Content="&lt;" FontSize="160" tobii:Behaviors.Activated="BtnPrevious_OnActivated" Style="{DynamicResource GazeActivatableButton1}"/>
         </Grid>
 
         <!-- Mid Panel -->
@@ -39,7 +40,7 @@
 
         <!-- Right Panel -->
         <Grid x:Name="RightLayoutRoot" Grid.Column="2">
-            <Button x:Name="BtnNext" Content=">" FontSize="160" tobii:Behaviors.Activated="BtnNext_OnActivated"  Style="{DynamicResource GazeActivatableButton1}"/>
+            <Button x:Name="BtnNext" Content="&gt;" FontSize="160" tobii:Behaviors.Activated="BtnNext_OnActivated"  Style="{DynamicResource GazeActivatableButton1}"/>
         </Grid>
 
     </Grid>
