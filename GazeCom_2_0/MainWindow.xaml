@@ -8,32 +8,49 @@
         xmlns:local="clr-namespace:GazeCom_2_0"
         mc:Ignorable="d"
         Title="MainWindow" Height="1080" Width="1920">
-    
+    <Window.Resources>
+        
+        <!-- Values -->
+        <GridLength x:Key="MRowGap">1</GridLength>
+        <GridLength x:Key="MLeftColumnSize">0</GridLength>
+        <GridLength x:Key="MRightColumnSize">400</GridLength>
+        
+        <!-- Style, Button -->
+        <Style x:Key="GazeActivatableButton1" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="tobii:Behaviors.IsGazeAware" Value="True"/>
+            <Setter Property="tobii:Behaviors.IsActivatable" Value="True"/>
+            <Style.Triggers>
+                <Trigger Property="tobii:Behaviors.HasGaze" Value="True">
+                    <Setter Property="Background" Value="Orange" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
+    </Window.Resources>
+
     <Grid x:Name="LayoutRoot" tobii:Behaviors.IsGazeAware="True">
-        <Grid.Style>
-            <Style TargetType="Grid">
-                <Setter Property="Background" Value="White" />
+        <!-- Grid Definitions -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="{StaticResource MLeftColumnSize}"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="{StaticResource MRightColumnSize}"/>
+        </Grid.ColumnDefinitions>
 
-                <Style.Triggers>
-                    <Trigger Property="tobii:Behaviors.HasGaze" Value="True">
-                        <Setter Property="Background" Value="Magenta" />
-                    </Trigger>
-                </Style.Triggers>
-            </Style>
-        </Grid.Style>
+        <!-- Right Panel -->
+        <Grid x:Name="MainLayoutRoot" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="{StaticResource MRowGap}"/>
+                <RowDefinition/>
+                <RowDefinition Height="{StaticResource MRowGap}"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
 
-        <Grid.Resources>
-            <GridLength x:Key="mRowGap">10</GridLength>
-        </Grid.Resources>
-        
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="{StaticResource mRowGap}"/>
-            <RowDefinition/>
-            <RowDefinition Height="{StaticResource mRowGap}"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        
+            <Button x:Name="BtnYes" Grid.Row="0" Content="Yes" FontSize="160" tobii:Behaviors.Activated="BtnYes_OnActivated" Style="{StaticResource GazeActivatableButton1}"/>
+            <Button x:Name="BtnNo" Grid.Row="2" Content="No" FontSize="160" tobii:Behaviors.Activated="BtnNo_OnActivated"  Style="{StaticResource GazeActivatableButton1}"/>
+            <Button x:Name="BtnMaybe" Grid.Row="4" Content="Maybe" FontSize="160" tobii:Behaviors.Activated="BtnMaybe_OnActivated"  Style="{StaticResource GazeActivatableButton1}"/>
+        </Grid>
         
     </Grid>
 </Window>
