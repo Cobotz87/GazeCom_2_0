@@ -24,9 +24,9 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <Button x:Name="BtnYes" Grid.Row="0" Content="Yes" FontSize="160" tobii:Behaviors.Activated="BtnYes_OnActivated"  Style="{DynamicResource GazeActivatableButton1}"/>
-            <Button x:Name="BtnNo" Grid.Row="2" Content="No" FontSize="160" tobii:Behaviors.Activated="BtnNo_OnActivated"  Style="{DynamicResource GazeActivatableButton1}"/>
-            <Button x:Name="BtnMaybe" Grid.Row="4" Content="Maybe" FontSize="160" tobii:Behaviors.Activated="BtnMaybe_OnActivated"  Style="{DynamicResource GazeActivatableButton1}"/>
+            <Button x:Name="BtnYes" Grid.Row="0" Content="Yes" FontSize="160" tobii:Behaviors.Activated="BtnYes_OnActivated" Style="{DynamicResource GazeActivatableButton1}"/>
+            <Button x:Name="BtnNo" Grid.Row="2" Content="No" FontSize="160" tobii:Behaviors.Activated="BtnNo_OnActivated" Style="{DynamicResource GazeActivatableButton1}"/>
+            <Button x:Name="BtnMaybe" Grid.Row="4" Content="Maybe" FontSize="160" tobii:Behaviors.Activated="BtnMaybe_OnActivated" Style="{DynamicResource GazeActivatableButton1}"/>
         </Grid>
 
 

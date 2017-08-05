@@ -15,6 +15,8 @@
                 <Setter Property="BorderThickness" Value="0"/>
                 <Setter Property="wpf:Behaviors.IsGazeAware" Value="True"/>
                 <Setter Property="wpf:Behaviors.IsActivatable" Value="True"/>
+                <Setter Property="HorizontalContentAlignment" Value="Right"/>
+                <Setter Property="Padding" Value="0,0,40,0"/>
                 <Style.Triggers>
                     <Trigger Property="wpf:Behaviors.HasGaze" Value="True">
                         <Setter Property="Background" Value="LightGreen"/>

@@ -14,7 +14,8 @@
 
         <!-- Values -->
         <GridLength x:Key="MLeftColumnSize">0</GridLength>
-        <GridLength x:Key="MRightColumnSize">250</GridLength>
+        <GridLength x:Key="MRestingAreaWidth">250</GridLength>
+        <GridLength x:Key="MRightColumnSize">200</GridLength>
 
     </Window.Resources>
 
@@ -24,6 +25,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="{StaticResource MLeftColumnSize}"/>
             <ColumnDefinition/>
+            <ColumnDefinition Width="{StaticResource MRestingAreaWidth}"/>
             <ColumnDefinition Width="{StaticResource MRightColumnSize}"/>
         </Grid.ColumnDefinitions>
 
@@ -37,8 +39,13 @@
             <ContentControl x:Name="MainPanel"/>
         </Grid>
 
+        <!-- Rest Area Panel -->
+        <Grid x:Name="RestAreaLayoutRoot" Grid.Column="2" Background="LightBlue">
+            <TextBlock TextWrapping="Wrap" Text="Look here to rest your eye :)" FontSize="50" Foreground="DarkBlue" TextAlignment="Center" FontFamily="Arial" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+        
         <!-- Right Panel -->
-        <Grid x:Name="RightLayoutRoot" Grid.Column="2">
+        <Grid x:Name="RightLayoutRoot" Grid.Column="3">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
