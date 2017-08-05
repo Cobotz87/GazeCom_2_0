@@ -94,6 +94,7 @@
     <Compile Include="Panels\YesNoPanel.xaml.cs">
       <DependentUpon>YesNoPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TobiiActivator\FixationActivationEngine.cs" />
     <Compile Include="TobiiActivator\FixationActivator.cs" />
     <Compile Include="Utilities\AppResources.cs" />
     <Compile Include="Utilities\TextToSpeech.cs" />

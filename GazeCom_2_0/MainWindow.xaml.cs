@@ -27,18 +27,15 @@ namespace GazeCom_2_0
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Host _tobiiHost;
-
         public MainWindow()
         {
             //Tobii
             var appInstance = Application.Current as App;
-            _tobiiHost = appInstance?.TobiiHost;
+            var tobiiHost = appInstance?.TobiiHost;
 
-            //FixationHelper
-            var fixationActivator = new FixationActivator(ref _tobiiHost);
-            fixationActivator.DurationToActivate = AppResources.GetFixation2ActivateTime();
-            fixationActivator.OnActivate += OnFixationActivation;
+            //Fixation Activation Engine
+            var fixationEngine = new FixationActivationEngine(ref tobiiHost);
+            fixationEngine.Initialize();
 
             InitializeComponent();
 
@@ -46,12 +43,6 @@ namespace GazeCom_2_0
             MainPanel.Content = new YesNoPanel();
         }
 
-        //Tobii, Fixation
-        private static void OnFixationActivation(ref Host tobiiHost)
-        {
-            tobiiHost.Commands.Input.SendActivation();
-        }
-        
         private void BtnCalibrate_OnActivated(object sender, ActivationRoutedEventArgs e)
         {
             //TODO: how to relaunch calibration?

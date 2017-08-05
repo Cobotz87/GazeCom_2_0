@@ -30,18 +30,11 @@ namespace GazeCom_2_0.Panels
             var appInstance = Application.Current as App;
             var tobiiHost = appInstance?.TobiiHost;
 
-            //FixationHelper
-            var fixationActivator = new FixationActivator(ref tobiiHost);
-            fixationActivator.DurationToActivate = AppResources.GetFixation2ActivateTime();
-            fixationActivator.OnActivate += OnFixationActivation;
+            //Fixation Activation Engine
+            var fixationEngine = new FixationActivationEngine(ref tobiiHost);
+            fixationEngine.Initialize();
 
             InitializeComponent();
-        }
-
-        //Tobii, Fixation
-        private static void OnFixationActivation(ref Host tobiiHost)
-        {
-            tobiiHost.Commands.Input.SendActivation();
         }
 
         //Activation Events
