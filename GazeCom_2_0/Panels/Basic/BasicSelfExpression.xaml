@@ -18,7 +18,7 @@
 
             <Button x:Name="BtnHungry" Grid.Row="0" Content="I''m Hungry" FontSize="80" wpf:Behaviors.Activated="BtnHungry_OnActivated"  Style="{DynamicResource GazeActivatableButton1}"/>
             <Button x:Name="BtnBored" Grid.Row="1" Content="Im Bored" FontSize="80" wpf:Behaviors.Activated="BtnBored_OnActivated"  Style="{DynamicResource GazeActivatableButton1}"/>
-            <Button x:Name="BtnTired" Grid.Row="2" Content="I'm tired" FontSize="80" wpf:Behaviors.Activated="BtnTired_OnActivated"  Style="{DynamicResource GazeActivatableButton1}"/>
+            <Button x:Name="BtnTired" Grid.Row="2" Content="I'm Tired" FontSize="80" wpf:Behaviors.Activated="BtnTired_OnActivated"  Style="{DynamicResource GazeActivatableButton1}"/>
         </Grid>
 
     </Grid>
