@@ -21,7 +21,6 @@ namespace GazeCom_2_0.TobiiActivator
         public FixationActivationEngine(ref Host tobiiHost)
         {
             _tobiiHost = tobiiHost;
-            _tobiiHost = tobiiHost;
         }
 
         public void Initialize()

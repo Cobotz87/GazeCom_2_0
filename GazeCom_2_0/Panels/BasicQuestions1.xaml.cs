@@ -27,11 +27,6 @@ namespace GazeCom_2_0.Panels
         public BasicQuestions1()
         {
             var appInstance = Application.Current as App;
-            var tobiiHost = appInstance?.TobiiHost;
-
-            //Fixation Activation Engine
-            var fixationEngine = new FixationActivationEngine(ref tobiiHost);
-            fixationEngine.Initialize();
 
             InitializeComponent();
         }
