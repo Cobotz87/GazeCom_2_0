@@ -19,7 +19,8 @@ namespace GazeCom_2_0.Panels.Basic
                 new YesNoPanel(),
                 new BasicQuestions1(),
                 new BasicSelfExpression(),
-                new BasicSelfExpression2()
+                new BasicSelfExpression2(),
+                new BasicSelfExpression3()
             };
 
             _currIndex = 0;

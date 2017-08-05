@@ -77,6 +77,25 @@ namespace GazeCom_2_0
                     calibrate.WaitForExit();
                 }
             }
+            else if(e.Key == Key.Right)
+            {
+                if (!_mainPanelSet1Manager.HasPanel())
+                    return;
+
+                MainPanel.Content = _mainPanelSet1Manager.GetNextPanel(true);
+            }
+            else if (e.Key == Key.Left)
+            {
+                if (!_mainPanelSet1Manager.HasPanel())
+                    return;
+
+                MainPanel.Content = _mainPanelSet1Manager.GetPreviousPanel(true);
+            }
+            else if(e.Key == Key.Escape)
+            {
+                this.Close();
+            }
+
         }
     }
 }
